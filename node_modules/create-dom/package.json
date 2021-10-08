@@ -1,0 +1,24 @@
+{
+  "name": "create-dom",
+  "version": "1.0.0",
+  "description": "Lightweight create DOM element helper",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghoullier/create-dom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ghoullier/create-dom/issues"
+  },
+  "homepage": "https://github.com/ghoullier/create-dom#readme",
+  "keywords": [
+    "dom",
+    "helper"
+  ],
+  "author": {
+    "name": "Grégory Houllier",
+    "url": "https://twitter.com/ghoullier"
+  },
+  "contributors": [],
+  "license": "MIT"
+}
