@@ -1,3 +1,4 @@
+import { TableArea } from "../TableArea"
 import { Container } from "./styles"
 
 export const Body = ()=> {
@@ -5,7 +6,7 @@ export const Body = ()=> {
     <Container>
       {/* Area de informação */}
       {/* Area de inserção */}
-      {/* Tabela de itens */}
+      <TableArea />
     </Container>
   )
 }
