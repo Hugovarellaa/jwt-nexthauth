@@ -4,7 +4,7 @@ import closeImg from "../../assets/close.svg";
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
 import { FormEvent, useState } from "react";
-import { api } from "../../services/api";
+import { useTransaction } from "../../useTransaction";
 
 interface NewModalProps {
   isOpenModal: boolean;
@@ -12,16 +12,21 @@ interface NewModalProps {
 }
 
 export function NewModal({ handleCloseModal, isOpenModal }: NewModalProps) {
+  const { createTransaction } = useTransaction();
   const [type, setType] = useState("deposit");
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [amount, setAmount] = useState(0);
 
-  function handleCreateNewTransaction(event: FormEvent) {
+  async function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault();
-    const data = { type, title, category, amount };
 
-    api.post("/transactions", data);
+    await createTransaction({ type, title, category, amount });
+    setType("deposit");
+    setTitle("");
+    setCategory("");
+    setAmount(0);
+    handleCloseModal();
   }
 
   return (
