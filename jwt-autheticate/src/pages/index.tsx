@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react";
 import { useAuth } from "../context/AuthContext";
+import { api } from "../services/api";
 import styles from "../styles/home.module.scss";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       email,
       password,
     };
+
     signIn(data);
   }
 
