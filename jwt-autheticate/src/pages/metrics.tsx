@@ -1,7 +1,6 @@
 import { GetServerSideProps } from "next";
 import { setupApiClient } from "../services/api";
 import { withSSRAuth } from "../utils/withSSRAuth";
-import decode from "jwt-decode";
 
 export default function Metrics() {
   return (

@@ -7,7 +7,7 @@ import { api } from "../services/apiClient";
 import { withSSRAuth } from "../utils/withSSRAuth";
 
 export default function Dashboard() {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
 
   const userCanSeeMetrics = useCan({
     permissions: ["metrics.list"],
@@ -24,7 +24,7 @@ export default function Dashboard() {
     <>
       <h1>dashboard : {user?.email}</h1>
 
-      {userCanSeeMetrics && <div>Métricas</div>}
+      <button onClick={signOut}>Sign Out</button>
     </>
   );
 }
